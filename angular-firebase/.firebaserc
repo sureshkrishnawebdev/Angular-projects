@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ang-fire-007": {
+      "hosting": {
+        "angular-firebase": [
+          "ang-fire-007"
+        ]
+      }
+    }
+  }
+}

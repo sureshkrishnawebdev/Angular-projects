@@ -1,0 +1,26 @@
+1. create angular project   
+    ------------------------------
+      ng new angular-firebase
+    ------------------------------
+
+2. configuring firebase library wd angular app 
+    - firebase provides a library called - "angularfire" - which helps as bridge btwn app --- firebase store
+    - adv: https://github.com/angular/angularfire
+    - quickstart: https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md
+
+   2.1 Install AngularFire and Firebase
+    -------------------------
+       ng add @angular/fire
+    -------------------------
+
+    2.2. Add the authorization code - post installation
+    2.3. select the app - we need to conenct to - created in firebase console
+    2.4. Add Firebase config to environments variable
+        - Open /src/environments/environment.ts
+        - copy the config values provided.
+    2.5. Install Firebase
+        -------------------------
+          npm install firebase
+        -------------------------
+    2.6. Setup @NgModule for the AngularFireModule
+        - Open /src/app/app.module.ts, inject the Firebase providers, and specify your Firebase configuration.
