@@ -1,0 +1,8 @@
+
+<label for="top-concepts"> Top Concepts In Angular 2+ </label>
+
+<ul>
+    <li *ngFor="let conceptItem of topConcepts$ | async" >
+        {{ conceptItem.name }}
+    </li>
+</ul>

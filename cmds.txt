@@ -33,4 +33,11 @@
 
 5. Fill the sample data in the firestore - our project -> firestore Db -> Data -> create collection
 
-6.
+6. Retrieve data from firestore 
+    6.1. Recommended - we will create a service file - ng g s /concepts/shared/concept
+                     - this gives the control over changing in near future - point of singularity
+
+    6.2. Not Recommended - using directly into ts file 
+
+    6.3. link - https://github.com/angular/angularfire, 
+                https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md,
