@@ -1,0 +1,17 @@
+.toolbar-container{
+    span {
+        padding-left: 2%;
+    }
+    button {
+      // @include secondary-color(yellowgreen);
+      background-color: yellowgreen;
+    }
+
+    .custm-color {
+
+        padding-left: 1%;
+        color: yellowgreen;
+        //@include secondary-color(yellowgreen);
+        //@include mat-icon-size(24px);
+    }
+}

@@ -9,15 +9,21 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+// Material 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PublicModule } from './public/public.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
+    PublicModule
   ],
   providers: [],
   bootstrap: [AppComponent]

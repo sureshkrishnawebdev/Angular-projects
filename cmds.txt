@@ -41,3 +41,17 @@
 
     6.3. link - https://github.com/angular/angularfire, 
                 https://github.com/angular/angularfire/blob/master/docs/firestore/querying-collections.md,
+
+7. Styling our app using angular material
+            ng add @angular/material
+    
+    7.1. Add - toolbar, sidenav 
+    
+    7.2. revamp the structure and routing module
+
+    7.3. inter- component communication 
+
+    link  - https://material.angular.io/guide/getting-started
+          - https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+          - Angular Components In Depth 13 - Using host selector - java brains
+          - https://stackoverflow.com/questions/43887701/how-to-change-mat-icon-size-in-material
