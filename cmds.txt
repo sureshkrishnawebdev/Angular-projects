@@ -24,3 +24,7 @@
         -------------------------
     2.6. Setup @NgModule for the AngularFireModule
         - Open /src/app/app.module.ts, inject the Firebase providers, and specify your Firebase configuration.
+
+3. creating a product module and interface - lazy loading module
+
+  3.1. creating a lazy loading module - ng g module products --route products --module app.module
