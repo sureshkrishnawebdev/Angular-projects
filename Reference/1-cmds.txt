@@ -1,0 +1,2 @@
+1. create a new angular app   -   ng new fitness-app
+
