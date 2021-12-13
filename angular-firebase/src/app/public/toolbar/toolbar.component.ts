@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ngFire-toolbar',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
+  @Output()
+  toggleNavClicked = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleNav(): void{
+    this.toggleNavClicked.emit();
   }
 
 }

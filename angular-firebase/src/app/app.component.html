@@ -1,2 +1,5 @@
-<app-ngFire-toolbar></app-ngFire-toolbar>
-<router-outlet></router-outlet>
+<app-ngFire-toolbar (toggleNavClicked)="toggleNav()"></app-ngFire-toolbar>
+<app-ngFire-sidenav 
+    [toggleOpen]="toggleState" 
+    (toggleOpenChange)="toggleState = false;">
+</app-ngFire-sidenav>

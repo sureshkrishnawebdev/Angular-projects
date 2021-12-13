@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-firebase';
+
+  toggleState: boolean = false;
+
+  toggleNav(): void {
+    this.toggleState = ! this.toggleState;
+  }
 }

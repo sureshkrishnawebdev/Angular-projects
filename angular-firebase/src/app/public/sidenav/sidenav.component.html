@@ -1,0 +1,43 @@
+<mat-sidenav-container
+    class="sidenav-container">
+    <mat-sidenav #sidenav 
+      mode="side" 
+      [opened]="toggleOpen"
+      (closed)="toggleOpenChange.emit(false)"
+      >        
+
+      <span class="dashboard-container">
+        <mat-icon> dashboard </mat-icon>
+        <h3> Dashboard </h3>
+      </span>
+
+      <mat-nav-list>                           
+              <a
+              [routerLink]="['/']"
+                  (click)="sidenav.close()"
+              >
+              <span>
+                <mat-icon>home</mat-icon>
+                <h4> Home </h4>
+              </span>
+            </a>                                                                       
+            <a 
+            [routerLink]="['/concepts']"
+            (click)="sidenav.close()"
+            >
+              <span>
+                <mat-icon>lightbulb</mat-icon>
+                <h4> Concepts </h4>
+              </span>
+            </a>                    
+      </mat-nav-list>
+      
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <router-outlet></router-outlet>
+      
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
