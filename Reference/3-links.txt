@@ -1,1 +1,11 @@
 1. Create a new project - https://angular.io/tutorial/toh-pt0
+2. Doing firebase setup
+    Browser -  https://firebase.google.com/
+    Angular project -  https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md
+3. 
+
+
+
+
+Add on 
+    - https://clevertap.com/blog/what-is-an-sdk/

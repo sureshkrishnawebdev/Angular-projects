@@ -1,2 +1,9 @@
 1. create a new angular app   -   ng new fitness-app
+2. Doing firebase setup
+    Browser
+        2.1. create a firebase account - https://firebase.google.com/
+        2.5. under overview tab ->  Add Firebase to your webapp
 
+    Angular project 
+        2.1. Install firebase sdk - npm install firebase
+        2.2. Install AngularFire - ng add @angular/fire

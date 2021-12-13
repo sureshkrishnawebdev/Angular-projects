@@ -1,1 +1,12 @@
 1. create a new angular app
+2. Doing firebase setup
+    Browser
+        2.1. create a firebase account 
+        2.2. create a project
+        2.3. setup authentication mode - Authentication Tab(Sign-in method) - email
+        2.4. create security rules - Realtime DB(rules)
+        2.5. Add Firebase to your webapp -> copy the firebase object and add it to environment file
+    
+    Angular project
+        2.1. Install firebase SDK.
+        2.2. Install AngularFire - a ts library which acts like a bridge btw Angular app --- firebase
