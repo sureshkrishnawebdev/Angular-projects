@@ -51,7 +51,24 @@
 
     7.3. inter- component communication 
 
-    link  - https://material.angular.io/guide/getting-started
-          - https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+    7.4. Adding progress bar
+
+    links  
+          Material
+            - https://material.angular.io/guide/getting-started
+            - https://material.angular.io/components/toolbar/examples
+            - https://material.angular.io/components/sidenav/examples            
+            - https://material.angular.io/components/progress-spinner/api
+
+          Icons
+            - https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+            - https://fonts.google.com/icons?selected=Material+Icons
+
+          Error
+            - https://stackoverflow.com/questions/54354644/error-in-module-build-failed-from-node-modules-sass-loader-lib-loader-js
+
+           Add on 
           - Angular Components In Depth 13 - Using host selector - java brains
-          - https://stackoverflow.com/questions/43887701/how-to-change-mat-icon-size-in-material
+          - https://stackoverflow.com/questions/43887701/how-to-change-mat-icon-size-in-material          
+          - https://angular.io/guide/styleguide
+          - https://stackoverflow.com/questions/52700871/change-color-of-mat-spinner

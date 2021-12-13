@@ -1,6 +1,15 @@
 
 <label for="top-concepts"> Top Concepts In Angular 2+ </label>
 
+<div class="progress-spinner-container" *ngIf="!(topConcepts$ | async)">
+    <mat-progress-spinner
+        class="spinner-margin"
+        [color]="spinnerColor"
+        [mode]="spinnerMode"
+        [value]="spinnerValue">
+    </mat-progress-spinner>
+</div>
+
 <ul>
     <li *ngFor="let conceptItem of topConcepts$ | async" >
         {{ conceptItem.name }}

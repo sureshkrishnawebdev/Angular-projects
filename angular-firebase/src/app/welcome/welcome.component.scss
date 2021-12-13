@@ -1,0 +1,7 @@
+.spinner-margin {
+    margin: 0 10px;
+}
+
+.mat-progress-spinner::ng-deep circle{
+    stroke: yellowgreen !important;
+}
