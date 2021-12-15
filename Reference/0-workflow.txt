@@ -10,3 +10,9 @@
     Angular project
         2.1. Install firebase SDK.
         2.2. Install AngularFire - a ts library which acts like a bridge btw Angular app --- firebase
+
+3. Creating an Auth Module 
+    3.1. It further divides into - login, register, shared
+    3.2. Making routes lazy loaded(login, register)
+    3.3. creating Auth-form component and its implementation
+    3.4. 
