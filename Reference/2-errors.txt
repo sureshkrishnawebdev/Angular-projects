@@ -1,0 +1,3 @@
+1. Can't bind to 'errorStateMatcher' since it isn't a known property of 'input'.(auth-form-component.html)
+    - import MatInputModule.
+

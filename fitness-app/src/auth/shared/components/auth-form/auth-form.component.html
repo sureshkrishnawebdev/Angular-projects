@@ -1,0 +1,47 @@
+<div class="auth-form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <ng-content select="h1"></ng-content>
+      
+        <mat-form-field>
+          <mat-label for="email"></mat-label>
+          <input matInput  autofocus
+          type="email"
+          placeholder="Enter Email Address"
+          formControlName="email"
+          [errorStateMatcher]="matcher">
+        
+          <mat-error *ngIf="isEmailInvalid">
+            Valid Email is required.
+          </mat-error>          
+
+        </mat-form-field>
+      
+        
+        <mat-form-field>
+          <mat-label for="password"></mat-label>
+        
+          <input matInput 
+          type="password"
+          placeholder="Enter Password"
+          formControlName="password"
+          [errorStateMatcher]="matcher">
+
+          <mat-error *ngIf="isPasswordInvalid">
+            Valid password is required.
+          </mat-error>
+        </mat-form-field>
+      
+        <div class="auth-form__actions">
+            <ng-content select="button"></ng-content>
+        </div>
+        
+        <div class="auth-form__toggle">
+            <ng-content select="a"></ng-content>
+        </div>           
+
+        {{ form.value  |  json }}
+      </div>  
+    </form>
+</div>
+

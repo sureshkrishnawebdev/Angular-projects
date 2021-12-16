@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // third-party
 import { AngularFireModule } from '@angular/fire';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AngularFireModule } from '@angular/fire';
     AppRoutingModule,
     AuthModule,
     AngularFireModule.initializeApp(environment),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
