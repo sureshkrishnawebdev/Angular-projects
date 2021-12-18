@@ -15,4 +15,12 @@
     3.1. It further divides into - login, register, shared
     3.2. Making routes lazy loaded(login, register)
     3.3. creating Auth-form component and its implementation
-    3.4. 
+    3.4. create Auth service 
+            1. Creating Methods 
+                1. To create user
+                2. To login user 
+            2. DI service as forRoot into main feature module - to avoid duplicate instance
+                1. Invoke as sharedModule.forRoot - in main feature module (Auth Module)
+                2. Just do a normal import of sharedModule - in sub feature modules(login, register)
+            3. Consuming the service
+            4. Redirection / error msg implementation based on response from firebase
