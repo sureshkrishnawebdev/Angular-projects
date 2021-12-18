@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -9,6 +9,9 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+// services
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
     declarations:[
@@ -25,4 +28,11 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
         AuthFormComponent
     ],
 })
-export class SharedModule { }
+export class SharedModule { 
+    static forRoot(): ModuleWithProviders<SharedModule> {
+        return {
+           ngModule: SharedModule,
+           providers: [ AuthService ],
+        }
+    }
+}

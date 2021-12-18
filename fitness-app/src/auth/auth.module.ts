@@ -25,7 +25,7 @@ import { environment } from 'src/environments/environment';
         AngularFireModule.initializeApp(environment),
         AngularFireAuthModule,
         AngularFireDatabaseModule,
-        SharedModule,
+        SharedModule.forRoot(),
     ]
 })
 export class AuthModule { }

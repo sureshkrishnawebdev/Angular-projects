@@ -24,9 +24,9 @@ const routes:Routes = [
     ],
     imports:[
         CommonModule,
-        RouterModule.forChild(routes),
         SharedModule,
-        MatButtonModule,
+        RouterModule.forChild(routes),
+        MatButtonModule,      
     ],
 })
 export class LoginModule { }
