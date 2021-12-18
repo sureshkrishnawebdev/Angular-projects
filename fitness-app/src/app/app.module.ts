@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // store
 
@@ -15,21 +15,14 @@ import { AuthModule } from 'src/auth/auth.module';
 // routes
 import { AppRoutingModule } from './app-routing.module';
 
-// third-party
-import { AngularFireModule } from '@angular/fire';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    AngularFireModule.initializeApp(environment),
     BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
