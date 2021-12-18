@@ -31,6 +31,10 @@
             Valid password is required.
           </mat-error>
         </mat-form-field>
+
+        <div class="auth-form__error">
+          <ng-content select=".error"></ng-content>
+        </div>
       
         <div class="auth-form__actions">
             <ng-content select="button"></ng-content>
@@ -38,9 +42,8 @@
         
         <div class="auth-form__toggle">
             <ng-content select="a"></ng-content>
-        </div>           
+        </div>                 
 
-        {{ form.value  |  json }}
       </div>  
     </form>
 </div>

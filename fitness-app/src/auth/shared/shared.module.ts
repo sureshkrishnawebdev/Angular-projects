@@ -8,7 +8,7 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
 //material
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 // services
 import { AuthService } from './services/auth/auth.service';
