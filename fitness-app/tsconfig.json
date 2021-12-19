@@ -19,7 +19,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "store" :["src/store.ts"],
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,
