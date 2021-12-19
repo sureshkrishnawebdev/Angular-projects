@@ -24,3 +24,11 @@
                 2. Just do a normal import of sharedModule - in sub feature modules(login, register)
             3. Consuming the service
             4. Redirection / error msg implementation based on response from firebase
+
+4. setting up store 
+    4.1. creating the store
+    4.2. creating a short path for importing store
+    4.3. Invoking the store and setting value
+    4.4. selecting value from store 
+    
+5.
