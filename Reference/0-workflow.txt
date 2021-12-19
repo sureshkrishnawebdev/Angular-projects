@@ -31,4 +31,12 @@
     4.3. Invoking the store and setting value
     4.4. selecting value from store 
     
-5.
+5. Adding Header and Navbar functionality
+    5.1. Header 
+            1. Display logout btn conditonally
+            2. Styling pending
+    5.2. Navbar
+            1. Display navbar post login  
+            2. Styling pending
+
+6.

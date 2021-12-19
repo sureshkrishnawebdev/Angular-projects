@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable, Subscription } from 'rxjs';
 
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit, OnDestroy{
   constructor( 
     private authService: AuthService,
     private store: Store,    
+    private router:Router,
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +31,13 @@ export class AppComponent implements OnInit, OnDestroy{
     // Consuming value from store
       this.user$ = this.store.select<User>('user');
   }
+
+  async  logoutUser(): Promise<any> {
+      await this.authService.logoutUser();
+      
+      // redirect
+      this.router.navigate(['/auth/login']);
+    }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

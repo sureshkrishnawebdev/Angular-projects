@@ -1,0 +1,21 @@
+.mat-toolbar{
+    justify-content: space-between;
+    padding-right: 4%;
+
+    img {
+        width: 30%;
+        padding: 5% 0% 0% 32%;
+        position: fixed;
+    }
+
+    #logout-btn {
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:420px) {
+    .mat-toolbar  img {
+        width: 12%;
+        padding-top: 2%;
+    }
+}

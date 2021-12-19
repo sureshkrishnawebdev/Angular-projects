@@ -1,0 +1,15 @@
+
+    <app-w3hTech-header
+        (logout)="logoutUser()"
+        [user]="(user$ | async)"
+    >
+    </app-w3hTech-header>
+
+    <app-w3hTech-nav 
+        *ngIf="(user$ | async)?.authenticated"
+    >        
+    </app-w3hTech-nav>
+
+    <h1 style="color: aliceblue;"> {{ (user$ | async)?.authenticated }} </h1>
+
+    <router-outlet></router-outlet>

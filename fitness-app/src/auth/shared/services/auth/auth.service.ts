@@ -55,4 +55,8 @@ export class AuthService {
             .signInWithEmailAndPassword( email, password);
     }
 
+    logoutUser(): Promise<any> {
+        return this.af.signOut();
+    }
+
 }
