@@ -1,3 +1,25 @@
 1. Can't bind to 'errorStateMatcher' since it isn't a known property of 'input'.(auth-form-component.html)
     - import MatInputModule.
 
+4. Issue when using store in app.module.ts
+    core.js:5980 ERROR NullInjectorError: R3InjectorError(AppModule)[AuthService -> Store -> Store -> Store]: 
+    NullInjectorError: No provider for Store!
+
+    Cause: we have used Store class in app.component.ts -> but we haven't declared it as Injectable for DI.
+
+            export class Store { ... }
+
+    Resolution:
+        1. Decorate with Injectable and declare it as providein root
+
+            @Injectable({
+                providedIn: 'root'
+            })
+            export class Store { ... }
+
+        2. declare this class directly into providers array of app.module.ts and store being normal class
+
+            export class Store { ... }  
+
+            providers:[   Store   ],
+            export class AppModule { }
