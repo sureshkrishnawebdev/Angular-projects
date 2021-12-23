@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// store
-
 // feature modules
 import { AuthModule } from 'src/auth/auth.module';
 import { HealthModule } from 'src/health/health.module';
