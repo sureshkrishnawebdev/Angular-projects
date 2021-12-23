@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+
+export interface Navbar {
+ label: string,
+ path: string;   
+}
+
 
 @Component({
     selector:'app-w3hTech-nav',
@@ -7,26 +14,35 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     template:`
     <div class="app-nav">
         <div class="wrapper">   
-            <mat-tab-group mat-align-tabs="center">       
-                <mat-tab label="Schedule">
-                    <div class="example-large-box mat-elevation-z4">
-                        Large content
-                    </div>
-                </mat-tab>
-                <mat-tab label="Meals">
-                    <div class="example-large-box mat-elevation-z4">
-                        Large content 1
-                    </div>
-                </mat-tab>
-                <mat-tab label="Workouts">
-                    <div class="example-large-box mat-elevation-z4">
-                        Large content 2
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
+            <nav mat-tab-nav-bar mat-align-tabs="center">
+                <a mat-tab-link *ngFor="let link of links"
+                    (click)="activeLink = link.label"
+                    [active]="activeLink == link.label"
+                    [routerLink]="link.path"> 
+                        {{ link.label }} 
+                    </a>
+            </nav>
         </div>
     </div>   
 
     `
 })
-export class AppNavComponent { }
+export class AppNavComponent implements OnInit{
+
+links!: Navbar[];   //dynamic links
+activeLink!: string;
+
+ngOnInit(): void {
+
+    this.links = [
+        { label: 'Schedule', path: 'schedule'},
+        { label: 'Meals', path: 'meals'},
+        { label: 'Workouts', path: 'workouts'},
+    ];
+
+    this.activeLink = this.links[0].label;
+
+}
+
+
+}

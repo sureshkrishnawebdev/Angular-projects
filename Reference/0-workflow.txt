@@ -41,4 +41,7 @@
 
 6. Creating a Health module
     6.1. It further divides into - schedule, meals, workouts
-    6.2. Lazy load these sub feature modules     
+    6.2. Lazy load these sub feature modules 
+    6.3. Mapping routes to our navbar
+            - with angular material mat-tab -> we couldn't fire routerlink
+            - we used another version of mat-tab - refer links section
