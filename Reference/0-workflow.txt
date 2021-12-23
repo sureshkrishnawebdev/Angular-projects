@@ -49,3 +49,4 @@
 7. Creating an Auth-Guard - to prevent user from accessing secured pages
     7.1. Create a auth-guard injectable - which implements canactivate  
     7.2. Register canactivate wd our secured routes 
+    7.3. Add default route - schedule so post login this route is selected by default
