@@ -7,7 +7,7 @@
 6.  Interchanging mat-tab - https://material.angular.io/components/tabs/examples
     old - Tab group with aligned labels 
     new - Basic use of the tab nav bar  
-
+    https://stackoverflow.com/questions/52959663/how-to-enable-routerlink-in-mat-tab
 
 
 
