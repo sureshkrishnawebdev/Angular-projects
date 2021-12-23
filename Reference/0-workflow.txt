@@ -39,4 +39,6 @@
             1. Display navbar post login  
             2. Styling pending
 
-6.
+6. Creating a Health module
+    6.1. It further divides into - schedule, meals, workouts
+    6.2. Lazy load these sub feature modules     

@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // feature modules
 import { AuthModule } from 'src/auth/auth.module';
+import { HealthModule } from 'src/health/health.module';
 
 // containers
 import { AppComponent } from './containers/app/app.component';
@@ -33,6 +34,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     AppRoutingModule,
     AuthModule,
+    HealthModule,
     MatToolbarModule,
     MatTabsModule,
   ],
