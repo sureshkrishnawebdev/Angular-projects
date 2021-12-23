@@ -59,4 +59,11 @@ export class AuthService {
         return this.af.signOut();
     }
 
+    // ------- helper ---------
+
+    get authState() {
+        return this.af.authState;
+    }
+
+
 }
