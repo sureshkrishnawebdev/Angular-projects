@@ -50,3 +50,10 @@
     7.1. Create a auth-guard injectable - which implements canactivate  
     7.2. Register canactivate wd our secured routes 
     7.3. Add default route - schedule so post login this route is selected by default
+
+8. Implemeting the meals feature
+    8.1. creating a shared module - as meals data is shared among other features
+    8.2. creating a meals service - to obtain data
+    8.3. creating a new state in store - for meals feature
+    8.4. creating a smart and dumb component 
+    8.5. invoking store and Consuming data 

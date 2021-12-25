@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 // store
 import { Store } from 'store';
 
 // rxjs
 import { tap } from 'rxjs/operators';
+
+// third- party
+import { AngularFireAuth } from '@angular/fire/auth';
 
 export interface User {
     email: string,
@@ -65,5 +67,8 @@ export class AuthService {
         return this.af.authState;
     }
 
+    get user() {
+        return this.af.currentUser;
+    }
 
 }

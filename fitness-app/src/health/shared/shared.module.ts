@@ -4,9 +4,13 @@ import { CommonModule } from '@angular/common';
 // services
 import { MealsService } from './services/meals/meals.service';
 
+// third-party
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
 @NgModule({
     imports:[
         CommonModule,
+        AngularFireDatabaseModule,
     ],
 })
 export class SharedModule { 
@@ -14,7 +18,7 @@ export class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                MealsService
+                MealsService,
             ],
         }
     }

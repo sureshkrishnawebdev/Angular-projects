@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 // shared
-import { SharedModule } from 'src/auth/shared/shared.module';
+import { SharedModule } from 'src/health/shared/shared.module';
 
 // routing
 import { HealthRoutingModule } from './health.routing.module';
