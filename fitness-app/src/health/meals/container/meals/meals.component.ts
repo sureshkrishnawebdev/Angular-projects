@@ -35,7 +35,7 @@ export class MealsComponent implements OnInit, OnDestroy{
             // get uid
             let user = await this.authService.user;      
             if( user ) {  this.mealsService.setUid( user?.uid  ); }           
-            // invoke meals after getting uid bcz meals observable requires uid
+            // invoke meals after getting uid bcz meals observable requires uid - pending - not working
             this.subscription = this.mealsService.meals$.subscribe();
             this.meals$ = this.store.select<Meal[]>('meals');
 

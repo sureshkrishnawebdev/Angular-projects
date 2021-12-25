@@ -48,8 +48,6 @@ get isPasswordInvalid() {
 }
 
 onSubmit(): void {
-    console.log(`inside onsubmit`);
-    console.log(this.form.value);
     // fallback
     if( ! this.form.valid ){  return;  }
 
