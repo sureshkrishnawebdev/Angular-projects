@@ -55,5 +55,7 @@
     8.1. creating a shared module - as meals data is shared among other features
     8.2. creating a meals service - to obtain data
     8.3. creating a new state in store - for meals feature
-    8.4. creating a smart and dumb component 
-    8.5. invoking store and Consuming data 
+    8.4. creating a smart and dumb component - architecture
+            Meals - dashboard - smart component
+                Add meal - smart and dumb component
+    8.5. implementation of dumb component

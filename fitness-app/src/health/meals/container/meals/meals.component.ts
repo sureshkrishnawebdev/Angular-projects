@@ -9,11 +9,8 @@ import { Store } from 'store';
 
 @Component({
     selector: 'app-w3hTech-meals',
+    templateUrl:'./meals.component.html',
     styleUrls: ['./meals.component.scss'],
-    template:`
-        Inside Meals Component
-        {{ meals$ | async | json }}
-    `
 })
 export class MealsComponent implements OnInit, OnDestroy{
 

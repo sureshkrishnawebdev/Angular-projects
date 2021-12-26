@@ -7,10 +7,15 @@ import { SharedModule } from 'src/health/shared/shared.module';
 
 // containers
 import { MealsComponent } from './container/meals/meals.component';
+import { MealComponent } from './container/meal/meal.component';
+
+// components
+import { MealFormComponent } from './components/meal-form/meal-form.component';
 
 
 export const routes: Routes = [
-    { path:'', component: MealsComponent }
+    { path:'', component: MealsComponent },     //  meals dashboard
+    { path:'new', component: MealComponent },   //  new meal
 ]
 
 @NgModule({
@@ -20,7 +25,9 @@ export const routes: Routes = [
         SharedModule,
     ],
     declarations:[
-        MealsComponent,       
+        MealsComponent, 
+        MealComponent,
+        MealFormComponent      
     ],
 })
 export class MealsModule { }
