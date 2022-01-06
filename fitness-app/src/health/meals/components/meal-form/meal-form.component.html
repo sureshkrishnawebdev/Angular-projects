@@ -1,0 +1,59 @@
+<div class="meal-form">
+    <form [formGroup]="form" autocomplete="off">
+
+        <div class="meal-form__name">
+            <label for="meal-name">
+                <h3> Meal Name </h3>
+            </label>
+            <input 
+                type="text"
+                placeholder="e.g. Breakfast"
+                formControlName="name">
+            <div class="error" *ngIf="isMealNameInvalid">
+                Meal Name is required.
+            </div>
+        </div>
+
+        <div class="meal-form__food">
+
+           <div class="meal-form__subtitle">
+            <h3 for="food"> Food  </h3>
+            <button
+                type="button"
+                (click)="addIngredient()" >
+                <i class='fas fa-plus'></i>
+                Add Food
+            </button>
+           </div>
+
+           <div formArrayName="ingredients" class="meal-form__ingredients">
+               <label *ngFor="let ingredient of ingredients.controls; index as i;">
+                    <input type="text"
+                        placeholder="e.g. Eggs"
+                        [formControlName]="i">
+                    
+                    <span 
+                        class="meal-form__remove"
+                        (click)="removeIngredient(i)">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </span>
+               </label>             
+           </div>
+
+           <div class="meal-form__actions">
+                <button 
+                    type="button"
+                    (click)="createMeal()">
+                    Create Meal
+                </button>
+                <a 
+                    class="button button-cancel"
+                    [routerLink]="['../']">
+                    Cancel
+                </a>
+           </div>
+
+        </div>
+
+    </form>    
+</div>

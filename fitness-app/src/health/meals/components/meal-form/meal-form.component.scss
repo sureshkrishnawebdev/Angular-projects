@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+%button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+.meal-form{
+    
+    font-size: 1rem;
+
+    &__name {
+        margin-bottom: 1em;
+    }
+
+    &__subtitle {
+        margin-bottom: 1em;
+    }
+    &__ingredients {
+        margin-bottom: 1em;
+    }    
+}
+
+.confirm, .cancel {
+    @extend %button;
+    padding: 0.25em 0.5em;
+}
+
+.error {
+    color: tomato;
+    background: #f2dede;
+    border: 1px solid #e4b3b3;
+    border-radius: 2px;
+    padding: 0.5em;
+}

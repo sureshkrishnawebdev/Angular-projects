@@ -30,7 +30,7 @@ export class MealsService {
     
     // meals/51jbVJHvHpOLP1KzXJ8CukHnVrn - to be replaced with dynamic
 
-    meals$: Observable<any[]> = this.db.list(`meals/51jbVJHvHpOLP1KzXJ8CukHnVrn1`).valueChanges()
+    meals$: Observable<any[]> = this.db.list(`meals/y78dkkzYePVPMUW8QKSdY8FAOCq2`).valueChanges()
         .pipe(
             tap( next => {
                 this.store.set('meals', next);
