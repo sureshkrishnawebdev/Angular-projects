@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Meal } from 'src/health/shared/services/meals/meals.service';
+import { Meal, MealsService } from 'src/health/shared/services/meals/meals.service';
 
 @Component({
     selector:'app-w3hTech-meal',
@@ -24,8 +24,13 @@ import { Meal } from 'src/health/shared/services/meals/meals.service';
 })
 export class MealComponent {
 
-    addMeal( event: Meal ): void {
+    constructor( 
+        private mealsService: MealsService,        
+    ) {}
+
+    async addMeal( event: Meal ) {
         console.log(event);
+        await this.mealsService.addMeal( event );
     }
 
 }

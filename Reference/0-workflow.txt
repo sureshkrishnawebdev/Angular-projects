@@ -58,4 +58,6 @@
     8.4. creating a smart and dumb component - architecture
             Meals - dashboard - smart component
                 Add meal - smart and dumb component
-    8.5. implementation of dumb component
+    8.5. implementation of dumb component -meal-form
+    8.6. Adding meal detail to firebase
+    8.7. retrieving data from firebase and rendering in frontend

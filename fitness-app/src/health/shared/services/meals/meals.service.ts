@@ -36,6 +36,10 @@ export class MealsService {
                 this.store.set('meals', next);
             })
         )
+    
+    addMeal( meal: Meal ) {
+        return this.db.list(`meals/y78dkkzYePVPMUW8QKSdY8FAOCq2`).push( meal );
+    }
 
     // ------- helper --------- 
     setUid( uid: string ) {

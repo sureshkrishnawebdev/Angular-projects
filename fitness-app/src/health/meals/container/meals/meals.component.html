@@ -17,6 +17,9 @@
                     <i class='far fa-frown'></i>
                     No meals, add a  new meal to start                
                 </div>
+                <div class="meals__content">
+                    {{ meals | json}}
+                </div>
             </div>
             <ng-template #loading>
                 <div class="message">
