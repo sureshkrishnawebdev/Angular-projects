@@ -2,8 +2,8 @@
     <div class="meals">
         <div class="meals__titile">
            <h1> 
+               Your Meals              
                 <i class='fas fa-hamburger'></i>
-                Your Meals              
            </h1>
            <a 
            [routerLink]="['../meals/new']">
@@ -18,7 +18,10 @@
                     No meals, add a  new meal to start                
                 </div>
                 <div class="meals__content">
-                    {{ meals | json}}
+                   <app-w3hTech-list-item
+                     *ngFor="let meal of meals"
+                      [item]="meal">                    
+                   </app-w3hTech-list-item>
                 </div>
             </div>
             <ng-template #loading>
