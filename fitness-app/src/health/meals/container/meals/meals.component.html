@@ -17,11 +17,11 @@
                     <i class='far fa-frown'></i>
                     No meals, add a  new meal to start                
                 </div>
-                <div class="meals__content">
+                <div class="meals__content" *ngIf="meals.length">
                    <app-w3hTech-list-item
                      *ngFor="let meal of meals"
                       [item]="meal"
-                      [user]="(user$ | async)">                    
+                      (remove)="removeMeal($event)">                    
                    </app-w3hTech-list-item>
                 </div>
             </div>

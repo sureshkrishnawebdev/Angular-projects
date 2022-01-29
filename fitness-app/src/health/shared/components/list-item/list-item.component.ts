@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { User } from 'src/auth/shared/services/auth/auth.service';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Meal } from '../../services/meals/meals.service';
 
 @Component({
@@ -17,32 +16,32 @@ import { Meal } from '../../services/meals/meals.service';
                         {{ item.ingredients }}
                     </span>
                 </p>
-                <div 
-                class="list-item__delete"
-                *ngIf="isDeleteClicked">
-                    <p>Delete Item ?</p>
-                    <button
-                    type="button"
-                    class="confirm"
-                    (click)="removeItem()"
-                    >
-                    Yes
-                    </button>
-                    <button
-                    type="button"
-                    class="cancel"
-                    (click)="toggleDelete()"
-                    >
-                    No
-                    </button>
-                </div>    
+            </a>
+            <div 
+            class="list-item__delete"
+            *ngIf="isDeleteClicked">
+                <p>Delete Item ?</p>
                 <button
                 type="button"
-                class="trash"
-                (click)="toggleDelete()">
-                    <i class="fas fa-trash"></i>
-                </button>    
-            </a>
+                class="confirm"
+                (click)="removeItem()"
+                >
+                Yes
+                </button>
+                <button
+                type="button"
+                class="cancel"
+                (click)="toggleDelete()"
+                >
+                No
+                </button>
+            </div>    
+            <button
+            type="button"
+            class="trash"
+            (click)="toggleDelete()">
+                <i class="fas fa-trash"></i>
+            </button>    
         </div>
     `
 })
@@ -52,14 +51,14 @@ export class ListItemComponent {
     @Input() 
     item!: Meal;
 
-    @Input()
-    user!:User | null;
+    @Output()
+    remove = new EventEmitter<Meal>();
 
     // properties
     isDeleteClicked: boolean = false;
 
     removeItem(): void {
-
+        this.remove.emit( this.item );
     }
 
     toggleDelete(): void {
@@ -67,6 +66,6 @@ export class ListItemComponent {
     }
 
     getRoute(){
-        return [`../meals`, this.user?.uid ];
+        return [`../meals`, this.item.mealKey ];
     }
 }

@@ -1,7 +1,7 @@
 1. Can't bind to 'errorStateMatcher' since it isn't a known property of 'input'.(auth-form-component.html)
     - import MatInputModule.
 
-4. Issue when using store in app.module.ts
+2. Issue when using store in app.module.ts
     core.js:5980 ERROR NullInjectorError: R3InjectorError(AppModule)[AuthService -> Store -> Store -> Store]: 
     NullInjectorError: No provider for Store!
 
@@ -23,3 +23,22 @@
 
             providers:[   Store   ],
             export class AppModule { }
+
+3. cannot-find-a-differ-supporting-object-object-object. Ngfor-only-supports-binding-to-iterables-such-as-arrays
+
+    Cause:  this problem is because the variable hasn't been assigned yet when angular tries to iterate through it, so it doesn't have a javascript type yet.
+
+             <div class="meals__content">
+                   <app-w3hTech-list-item
+                     *ngFor="let meal of meals"
+                      [item]="meal"
+
+    Resolution: when our meals observable of type null. we have this issue. check before iterating - added *ngIf="meals.length"
+
+            <div class="meals__content" *ngIf="meals.length">
+                   <app-w3hTech-list-item
+                     *ngFor="let meal of meals"
+                      [item]="meal"
+
+    links: https://stackoverflow.com/questions/51838181/error-ngfor-only-supports-binding-to-iterables-such-as-arrays
+    

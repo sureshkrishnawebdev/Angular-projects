@@ -63,8 +63,8 @@
     8.7. Retrieving data from firebase and rendering in frontend - list-item component
     8.8. Create a dynamic route with id 
             - 1. Reusing the create meal component - y ? bcz
-                - 1. To enable the edit functionality for that specific meal 
-                - 2. Implemeting specific functionalities for "Create Meal" and "Edit Meal"
+                - 1.1 To enable the edit functionality for that specific meal - Add/ Delete
+                - 1.2. Implemeting specific functionalities for "Create Meal" and "Edit Meal"
                     1. Title - Create / Edit
                     2. Input fields data - Empty / auto-populate
                     3. Action - Create / Update

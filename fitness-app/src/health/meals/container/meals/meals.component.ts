@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Observable, Subscription } from 'rxjs';
 
-import { AuthService, User } from 'src/auth/shared/services/auth/auth.service';
+import { AuthService } from 'src/auth/shared/services/auth/auth.service';
 import { Meal, MealsService } from 'src/health/shared/services/meals/meals.service';
 
 import { Store } from 'store';
@@ -16,8 +16,6 @@ export class MealsComponent implements OnInit, OnDestroy{
 
     meals$!: Observable<Meal[]>;
     subscription!: Subscription;
-
-    user$!: Observable<User>;
 
     constructor(
         private mealsService: MealsService,
@@ -36,12 +34,15 @@ export class MealsComponent implements OnInit, OnDestroy{
             if( user ) {  this.mealsService.setUid( user?.uid  ); }           
             // invoke meals after getting uid bcz meals observable requires uid - pending - not working
             this.subscription = this.mealsService.meals$.subscribe();
-            this.meals$ = this.store.select<Meal[]>('meals');
-            this.user$ = this.store.select<User>('user');
+            this.meals$ = this.store.select<Meal[]>('meals');                       
 
         } catch ( err ) {
             throw new Error( err.message ); // Pending
         } 
+    }
+
+    removeMeal( item: Meal ) {
+        this.mealsService.removeMeal( item.mealKey );
     }
 
     ngOnDestroy(): void {

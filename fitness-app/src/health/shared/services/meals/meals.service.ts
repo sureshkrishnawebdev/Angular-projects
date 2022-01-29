@@ -4,7 +4,7 @@ import { AuthService } from 'src/auth/shared/services/auth/auth.service';
 
 import { Store } from 'store';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 // third-party
@@ -16,6 +16,7 @@ export interface Meal{
     timestamp: number,
     $key: string,
     $exists: () => boolean,
+    mealKey:string;
 }
 
 @Injectable()
@@ -32,13 +33,35 @@ export class MealsService {
 
     meals$: Observable<any[]> = this.db.list(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883`).valueChanges()
         .pipe(
-            tap( next => {
-                this.store.set('meals', next);
+            tap( next => {      
+                
+                let mealsArr:any[];
+                let mealsObj: any;
+                let mealsObjKey: any[];
+                let meals:any[];
+
+                mealsArr =[...next];
+
+                this.db.object('meals/Fe694Obd4nd0uwk9fpWLzfiLh883')
+                    .valueChanges()
+                    .subscribe((val) => {
+                        
+                        mealsObj = val as any;                        
+                        if(mealsObj){
+                            mealsObjKey = Object.keys(mealsObj);                             
+                            meals = mealsArr.map( (meal, index) => ({ ...meal, mealKey:mealsObjKey[index] }) );                                
+                        }                                 
+                        this.store.set('meals', (meals) || of(null));
+                    })                            
             })
         )
     
-    addMeal( meal: Meal ) {
+    addMeal( meal: Meal ) {        
         return this.db.list(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883`).push( meal );
+    }
+
+    removeMeal( key: string ){
+        return this.db.list(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883`).remove( key );
     }
 
     // ------- helper --------- 
