@@ -56,17 +56,23 @@ export class MealsService {
             })
         )
     
-    getMeal( key: string ){        
+    getMeal( key: string ){  
+        // fallback      
         if( !key ){ return  of({}) };
+
         return  this.store.select<Meal[]>('meals')
                 .pipe(
                     filter<Meal[]>( Boolean ),
-                    map( (meals: Meal[]) => meals.find( (meal: Meal) => meal.mealKey === key ) )
+                    map( (meals: Meal[]) => meals.find( (meal: Meal) => (meal.mealKey === key)) )
                 )
     }
 
     addMeal( meal: Meal ) {        
         return this.db.list(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883`).push( meal );
+    }
+
+    updateMeal( key:string, meal: Meal ) {
+        return this.db.object(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883/${key}`).update( meal );
     }
 
     removeMeal( key: string ){

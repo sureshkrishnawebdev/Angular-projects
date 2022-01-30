@@ -23,11 +23,18 @@ import { switchMap } from 'rxjs/operators';
                         </ng-template>
                     </h1>
                 </div>
-                <div>
+                <div *ngIf="(meal$ | async) as meal; else loading">                          
                     <app-w3hTech-meal-form
-                        (create)="addMeal($event)">
+                        [meal]="meal"
+                        (create)="addMeal($event)"
+                        (update)="updateMeal($event)"
+                        (remove)="removeMeal($event)">
                     </app-w3hTech-meal-form>
                 </div>
+                <ng-template #loading>
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+                    Fetching meal...
+                </ng-template>
             </div>
         </body>
     `
@@ -50,6 +57,22 @@ export class MealComponent implements OnInit, OnDestroy{
 
     async addMeal( event: Meal ) {        
         await this.mealsService.addMeal( event );
+        this.backToMeals();
+    }
+
+    async updateMeal( event: Meal ) {     
+        // we are taking id from route as the new form object wont be having mealkey
+        const key = this.activatedRoute.snapshot.params.id;
+        console.log(`update`, event, key);  
+        await this.mealsService.updateMeal( key, event );
+        this.backToMeals();
+    }
+
+    async removeMeal( event: Meal ) {           
+        const key = this.activatedRoute.snapshot.params.id;
+        console.log(`this.activatedRoute.snapshot.params`, this.activatedRoute.snapshot.params);  
+        console.log(`remove`, event, key);  
+        await this.mealsService.removeMeal( key );
         this.backToMeals();
     }
 

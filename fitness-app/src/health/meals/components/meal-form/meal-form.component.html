@@ -42,15 +42,41 @@
 
            <div class="meal-form__actions">
                 <button 
+                    *ngIf="!isMealExist"
                     type="button"
                     (click)="createMeal()">
                     Create Meal
+                </button>
+                <button 
+                    *ngIf="isMealExist"
+                    type="button"
+                    (click)="updateMeal()">
+                    Save
                 </button>
                 <a 
                     class="button button-cancel"
                     [routerLink]="['../']">
                     Cancel
                 </a>
+                <div class="meal-form__delete" *ngIf="isDeleteClicked">
+                    <p> Delete Item ?</p>
+                    <button                     
+                      type="button"
+                      (click)="removeMeal()">
+                        Yes
+                    </button>
+                    <button                     
+                      type="button"
+                      (click)="toggleDelete()">
+                        No
+                    </button>
+                </div>
+                <button    
+                    *ngIf="isMealExist"                 
+                    type="button"
+                    (click)="toggleDelete()">
+                    Delete
+                </button>
            </div>
 
         </div>

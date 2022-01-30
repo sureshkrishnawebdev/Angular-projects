@@ -30,6 +30,10 @@
     4.2. creating a short path for importing store
     4.3. Invoking the store and setting value
     4.4. selecting value from store 
+
+Note: 
+    1. Our store will be empty on page reload. Data will be persisted only when we navigate across our application without reload.    
+    2. This allows us to avoid unwanted api calls to retrieve data on every revisit instead it will be obtained from store once published.
     
 5. Adding Header and Navbar functionality
     5.1. Header 
