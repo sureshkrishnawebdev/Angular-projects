@@ -5,7 +5,7 @@ import { AuthService } from 'src/auth/shared/services/auth/auth.service';
 import { Store } from 'store';
 
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, filter, map } from 'rxjs/operators';
 
 // third-party
 import { AngularFireDatabase } from '@angular/fire/database';
@@ -56,6 +56,15 @@ export class MealsService {
             })
         )
     
+    getMeal( key: string ){        
+        if( !key ){ return  of({}) };
+        return  this.store.select<Meal[]>('meals')
+                .pipe(
+                    filter<Meal[]>( Boolean ),
+                    map( (meals: Meal[]) => meals.find( (meal: Meal) => meal.mealKey === key ) )
+                )
+    }
+
     addMeal( meal: Meal ) {        
         return this.db.list(`meals/Fe694Obd4nd0uwk9fpWLzfiLh883`).push( meal );
     }

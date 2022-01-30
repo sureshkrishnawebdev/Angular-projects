@@ -28,7 +28,7 @@
 
     Cause:  this problem is because the variable hasn't been assigned yet when angular tries to iterate through it, so it doesn't have a javascript type yet.
 
-             <div class="meals__content">
+             <div class="meals__content"> 
                    <app-w3hTech-list-item
                      *ngFor="let meal of meals"
                       [item]="meal"
@@ -42,3 +42,18 @@
 
     links: https://stackoverflow.com/questions/51838181/error-ngfor-only-supports-binding-to-iterables-such-as-arrays
     
+4. Type 'unknown' is not assignable to type 'Meal[]'.
+
+     Cause:  When we pass values a type of `any`, * it produces an array of type `unknown[]`.
+
+              getMeal( key: string ){
+                    if( !key ){ return  of({}) };
+                        return  this.store.select<Meal[]>('meals')
+                            .pipe(
+                                filter( Boolean ),  **Error**
+
+    Resolution: Typecast the values
+
+            filter<Meal[]>( Boolean ),
+
+    links: https://stackoverflow.com/questions/56485202/argument-of-type-unknown-is-not-assignable-to-parameter-of-type
