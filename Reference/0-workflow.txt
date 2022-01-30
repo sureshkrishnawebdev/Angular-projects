@@ -72,3 +72,14 @@ Note:
                     1. Title - Create / Edit
                     2. Input fields data - Empty / auto-populate
                     3. Action - Create / Update
+
+9. Implemeting the workouts feature - works same as meal feature    
+    9.1. creating a workouts service - to obtain data
+    9.2. creating a new state in store - for workouts feature
+    9.3. creating a smart and dumb component - architecture
+             Workouts - dashboard - smart component
+                Add workout - smart and dumb component
+    9.5. implementation of dumb component -workout-form
+    9.6. Adding workout detail to firebase
+    9.7. Retrieving data from firebase and rendering in frontend - list-item component
+            - Making our list-it-component -> dynamic

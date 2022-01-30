@@ -1,0 +1,36 @@
+<body style="background: black; color: white;">
+    <div class="workouts">
+        <div class="workouts__titile">
+           <h1> 
+            <i class="fas fa-dumbbell"></i>
+               Your Workouts                            
+           </h1>
+           <a 
+           [routerLink]="['../workouts/new']">
+           <i class='fas fa-plus'></i>
+               New Workout
+           </a>
+        </div>
+        <div class="workouts__container">
+            <div *ngIf="(workouts$ | async) as workouts; else loading">
+                <div class="message" *ngIf="!workouts.length">
+                    <i class='far fa-frown'></i>
+                    No workouts, add a  new workout to start                
+                </div>
+                <!-- <div class="workouts__content" *ngIf="workouts.length">
+                   <app-w3hTech-list-item
+                     *ngFor="let workout of workouts"
+                      [item]="workout"
+                      (remove)="removeWorkout($event)">                    
+                   </app-w3hTech-list-item>
+                </div> -->
+            </div>
+            <ng-template #loading>
+                <div class="message">
+                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                    Fetching workouts...
+                </div>                
+            </ng-template>
+        </div>
+    </div>
+</body>

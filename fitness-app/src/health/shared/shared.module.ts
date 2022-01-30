@@ -7,6 +7,7 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 
 // services
 import { MealsService } from './services/meals/meals.service';
+import { WorkoutsService } from './services/workouts/workouts.service';
 
 // third-party
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -31,6 +32,7 @@ export class SharedModule {
             ngModule: SharedModule,
             providers: [
                 MealsService,
+                WorkoutsService,
             ],
         }
     }

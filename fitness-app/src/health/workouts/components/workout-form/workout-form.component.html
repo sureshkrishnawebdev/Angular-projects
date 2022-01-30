@@ -1,0 +1,57 @@
+<div class="workout-form">
+    <form [formGroup]="form" autocomplete="off">
+
+        <div class="workout-form__name">
+            <label for="workout-name">
+                <h3> Workout Name </h3>
+            </label>
+            <input 
+                type="text"
+                placeholder="e.g. Squats"
+                formControlName="name">
+            <div class="error" *ngIf="isWorkoutNameInvalid">
+                Workout Name is required.
+            </div>
+        </div>
+
+           <div class="workout-form__actions">
+                <button 
+                    *ngIf="!isWorkoutExist"
+                    type="button"
+                    (click)="createWorkout()">
+                    Create Workout
+                </button>
+                <button 
+                    *ngIf="isWorkoutExist"
+                    type="button"
+                    (click)="updateWorkout()">
+                    Save
+                </button>
+                <a 
+                    class="button button-cancel"
+                    [routerLink]="['../']">
+                    Cancel
+                </a>
+                <div class="workout-form__delete" *ngIf="isDeleteClicked">
+                    <p> Delete Item ?</p>
+                    <button                     
+                      type="button"
+                      (click)="removeWorkout()">
+                        Yes
+                    </button>
+                    <button                     
+                      type="button"
+                      (click)="toggleDelete()">
+                        No
+                    </button>
+                </div>
+                <button    
+                    *ngIf="isWorkoutExist"                 
+                    type="button"
+                    (click)="toggleDelete()">
+                    Delete
+                </button>
+           </div>
+
+    </form>    
+</div>
