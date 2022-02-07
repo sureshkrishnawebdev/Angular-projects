@@ -83,3 +83,11 @@ Note:
     9.6. Adding workout detail to firebase
     9.7. Retrieving data from firebase and rendering in frontend - list-item component
             - Making our list-it-component -> dynamic
+
+
+
+Last - pending
+--------------
+1. styling
+2. security
+3. Testing 
