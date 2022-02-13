@@ -1,57 +1,64 @@
 <div class="workout-form">
-    <form [formGroup]="form" autocomplete="off">
+    <form [formGroup]="form" autocomplete="off" novalidate>
 
         <div class="workout-form__name">
             <label for="workout-name">
-                <h3> Workout Name </h3>
+                <h3> Workout Name </h3>            
+                <input 
+                    type="text"
+                    placeholder="e.g. Squats"
+                    formControlName="name">
+                <div class="error" *ngIf="isWorkoutNameInvalid">
+                    Workout Name is required.
+                </div>
             </label>
-            <input 
-                type="text"
-                placeholder="e.g. Squats"
-                formControlName="name">
-            <div class="error" *ngIf="isWorkoutNameInvalid">
-                Workout Name is required.
-            </div>
+            <label for="workout-form__type">
+                <h3> Type </h3>
+                <p> {{ form.value | json }} </p>
+                <app-w3hTech-workout-type 
+                 formControlName="type">                    
+                </app-w3hTech-workout-type>
+            </label>
         </div>
 
-           <div class="workout-form__actions">
-                <button 
-                    *ngIf="!isWorkoutExist"
+        <div class="workout-form__actions">
+            <button 
+                *ngIf="!isWorkoutExist"
+                type="button"
+                (click)="createWorkout()">
+                Create Workout
+            </button>
+            <button 
+                *ngIf="isWorkoutExist"
+                type="button"
+                (click)="updateWorkout()">
+                Save
+            </button>
+            <a 
+                class="button button-cancel"
+                [routerLink]="['../']">
+                Cancel
+            </a>
+            <div class="workout-form__delete" *ngIf="isDeleteClicked">
+                <p> Delete Item ?</p>
+                <button                     
                     type="button"
-                    (click)="createWorkout()">
-                    Create Workout
+                    (click)="removeWorkout()">
+                    Yes
                 </button>
-                <button 
-                    *ngIf="isWorkoutExist"
-                    type="button"
-                    (click)="updateWorkout()">
-                    Save
-                </button>
-                <a 
-                    class="button button-cancel"
-                    [routerLink]="['../']">
-                    Cancel
-                </a>
-                <div class="workout-form__delete" *ngIf="isDeleteClicked">
-                    <p> Delete Item ?</p>
-                    <button                     
-                      type="button"
-                      (click)="removeWorkout()">
-                        Yes
-                    </button>
-                    <button                     
-                      type="button"
-                      (click)="toggleDelete()">
-                        No
-                    </button>
-                </div>
-                <button    
-                    *ngIf="isWorkoutExist"                 
+                <button                     
                     type="button"
                     (click)="toggleDelete()">
-                    Delete
+                    No
                 </button>
-           </div>
+            </div>
+            <button    
+                *ngIf="isWorkoutExist"                 
+                type="button"
+                (click)="toggleDelete()">
+                Delete
+            </button>
+        </div>
 
     </form>    
 </div>

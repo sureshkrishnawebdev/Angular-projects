@@ -81,7 +81,8 @@ Note:
                 Add workout - smart and dumb component
     9.5. implementation of dumb component -workout-form
     9.6. Adding workout detail to firebase
-    9.7. Retrieving data from firebase and rendering in frontend - list-item component
+    9.7. Creating an custom value accessor -- for using workout-type component as form control in workout-form component
+    9.8. Retrieving data from firebase and rendering in frontend - list-item component
             - Making our list-it-component -> dynamic
 
 

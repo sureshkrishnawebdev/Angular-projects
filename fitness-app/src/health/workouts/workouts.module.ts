@@ -9,11 +9,10 @@ import { SharedModule } from 'src/health/shared/shared.module';
 // containers
 import { WorkoutsComponent } from './container/workouts/workouts.component';
 import { WorkoutComponent } from './container/workout/workout.component';
-import { WorkoutFormComponent } from './components/workout-form/workout-form.component';
-
 
 // components
-
+import { WorkoutFormComponent } from './components/workout-form/workout-form.component';
+import { WorkoutTypeComponent } from './components/workout-type/workout-type.component';
 
 
 export const routes: Routes = [
@@ -32,7 +31,8 @@ export const routes: Routes = [
     declarations:[
         WorkoutsComponent, 
         WorkoutComponent,
-        WorkoutFormComponent,      
+        WorkoutFormComponent, 
+        WorkoutTypeComponent,     
     ],
 })
 export class WorkoutsModule { }

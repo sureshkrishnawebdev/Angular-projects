@@ -1,0 +1,12 @@
+
+.workout-type {
+
+    &__pane {
+
+        cursor: pointer;
+
+        &.active{
+            border: 1px solid white;
+        }
+    }
+}
